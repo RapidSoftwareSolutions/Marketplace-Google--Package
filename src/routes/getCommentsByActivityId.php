@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/getCommentsByActivityId', function ($request, $response) {
+$app->post('/api/GooglePlus/getCommentsByActivityId', function ($request, $response) {
 
 
     $option = array(

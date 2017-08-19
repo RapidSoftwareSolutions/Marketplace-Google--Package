@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/getUsersByActivityId', function ($request, $response) {
+$app->post('/api/GooglePlus/getUsersByActivityId', function ($request, $response) {
 
 
     $option = array(

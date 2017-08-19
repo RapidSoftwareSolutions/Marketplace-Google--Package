@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/getUsersBySearchQuery', function ($request, $response) {
+$app->post('/api/GooglePlus/getUsersBySearchQuery', function ($request, $response) {
 
 
     $option = array(

@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/getComment', function ($request, $response) {
+$app->post('/api/GooglePlus/getComment', function ($request, $response) {
 
 
     $option = array(

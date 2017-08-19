@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/refreshToken', function ($request, $response) {
+$app->post('/api/GooglePlus/refreshToken', function ($request, $response) {
 
 
     $option = array(

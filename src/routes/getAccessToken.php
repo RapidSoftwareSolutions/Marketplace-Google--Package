@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/Google+/getAccessToken', function ($request, $response) {
+$app->post('/api/GooglePlus/getAccessToken', function ($request, $response) {
 
 
     $option = array(
