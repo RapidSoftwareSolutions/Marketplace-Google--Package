@@ -495,9 +495,6 @@
 					"info": "Specify the preferred language to search with.",
 					"required": false
 				}
-
-
-
 			],
 			"callbacks": [{
 				"name": "error",
