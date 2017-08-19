@@ -8,12 +8,9 @@ The Google+ API is the programming interface to Google+. You can use the API to 
 ## How to get credentials: 
 1. Go to the [Google API Console](https://console.developers.google.com). 
 2. From the project drop-down, select a project,or create a new one.
-3.Enable the Google+ API service:
-3.1. In the list of Google APIs, search for the Google+ API service.
-3.2.  Select Google+ API from the results list.
-3.3.  Press the Enable API button.
-4.When the process completes, Google+ API appears in the list of enabled APIs.
-5.In the sidebar under "APIs & Services", select Credentials.
+3. Enable the Google+ API service.
+4. When the process completes, Google+ API appears in the list of enabled APIs.
+5. In the sidebar under "APIs & Services", select Credentials.
 
 ## Google+.getAccessToken
 Exchanging authorization codes for access tokens and refresh tokens.To limit exposure that could result from the loss of this token, it has a medium lifetime, usually expiring after an hour or so.
@@ -57,7 +54,7 @@ List all of the people in the specified collection for a particular activity.The
 | pageToken  | String| The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.
 
 ## Google+.getUsersBySearchQuery
-Search all public profiles. 
+Search all public profiles. For large result sets, results are paginated. For the most up-to-date search results, do not use a pageToken older than five minutes. Instead, restart pagination by repeating the original request (omitting pageToken). 
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -112,7 +109,7 @@ List all of the activities in the specified collection for a particular user.The
 | pageToken  | String| The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.
 
 ## Google+.getActivitiesBySearchQuery
-Search public activities.For large result sets, results are paginated. 
+Search public activities.For large result sets, results are paginated. For large result sets, results are paginated. For the most up-to-date search results, do not use a pageToken older than five minutes. Instead, restart pagination by repeating the original request (omitting pageToken).
 
 | Field      | Type  | Description
 |------------|-------|----------
