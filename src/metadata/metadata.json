@@ -3,7 +3,7 @@
 	"tagline": "Google+ API",
 	"description": "The Google+ API is the programming interface to Google+. You can use the API to integrate your app or website with Google+. This enables users to connect with each other for maximum engagement using Google+ features from within your application.",
 	"image": "https://logo.clearbit.com/plus.google.com",
-	"repo": "",
+	"repo": "https://github.com/RapidSoftwareSolutions/Marketplace-GooglePlus-Package",
 	"keywords": [
 		"API",
 		"Google",
