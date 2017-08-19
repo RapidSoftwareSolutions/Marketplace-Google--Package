@@ -1,0 +1,516 @@
+{
+	"package": "Google+",
+	"tagline": "Google+ API",
+	"description": "The Google+ API is the programming interface to Google+. You can use the API to integrate your app or website with Google+. This enables users to connect with each other for maximum engagement using Google+ features from within your application.",
+	"image": "https://logo.clearbit.com/plus.google.com",
+	"repo": "",
+	"keywords": [
+		"API",
+		"Google",
+		"Account",
+		"People",
+		"Comments",
+		"Activities"
+	],
+	"accounts": {
+		"domain": "plus.google.com",
+    "credentials": ["clientId","clientSecret"]
+	},
+	"blocks": [
+		{
+			"name": "getAccessToken",
+			"description": "Exchanging authorization codes for access tokens and refresh tokens.",
+			"args": [
+				{
+					"name": "clientId",
+					"type": "credentials",
+					"info": "A string that identifies the request origin as Google. This string must be registered within your system as Google's unique identifier.",
+					"required": true
+				},
+				{
+					"name": "clientSecret",
+					"type": "credentials",
+					"info": "A secret string that you registered with Google for your service.",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"info": "The code Google received from either your sign-in or token exchange endpoint.",
+					"required": true
+				},
+				{
+					"name": "redirectUri",
+					"type": "String",
+					"info": "The URL to which to send the response to this request.",
+					"required": true
+				}
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "refreshToken",
+			"description": "Exchanging refresh tokens for access tokens.",
+			"args": [
+				{
+					"name": "clientId",
+					"type": "credentials",
+					"info": "A string that identifies the request origin as Google. This string must be registered within your system as Google's unique identifier.",
+					"required": true
+				},
+				{
+					"name": "clientSecret",
+					"type": "credentials",
+					"info": "A secret string that you registered with Google for your service.",
+					"required": true
+				},
+				{
+					"name": "refreshToken",
+					"type": "String",
+					"info": "The refresh token Google received from your getAccessToken endpoint.",
+					"required": true
+				}
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getUser",
+			"description": "Get a person's profile.If successful, this method returns a person resource in the response body.",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "userId",
+					"type": "String",
+					"info": "The ID of the person to get the profile for. The special value `me` can be used to indicate the authenticated user.",
+					"required": true
+				},
+				{
+					"name": "fields",
+					"type": "List",
+						"info": "List specifying which fields to include in a partial response.",
+					"required": false,
+					"structure": {
+						"name": "singleField",
+						"type": "String",
+						"info": "Single field."
+					}
+				},
+				{
+					"name": "prettyPrint",
+					"type": "Select",
+					"options": ["true","false"],
+					"info": "If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.",
+					"required": false
+				},
+				{
+					"name": "userIp",
+					"type": "String",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getUsersByActivityId",
+			"description": "List all of the people in the specified collection for a particular activity.The collection parameter specifies which people to list, such as people who have +1`d or reshared this activity. For large collections, results are paginated. ",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "activityId",
+					"type": "String",
+					"info": "The ID of the activity to get the list of people for.",
+					"required": true
+				},
+				{
+					"name": "collection",
+					"type": "Select",
+					"options": ["plusoners","resharers"],
+					"info": "The collection of people to list.`Plusoners`: List all people who have +1'd this activity.`Resharers`: List all people who have reshared this activity.",
+					"required": false
+				},
+				{
+					"name": "maxResults",
+					"type": "Number",
+					"info": "The maximum number of people to include in the response, which is used for paging.",
+					"required": false
+				},
+				{
+					"name": "pageToken",
+					"type": "String",
+					"info": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getUsersBySearchQuery",
+			"description": "Search all public profiles. ",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "searchQuery",
+					"type": "String",
+					"info": "Specify a query string for full text search of public text in all profiles.",
+					"required": true
+				},
+				{
+					"name": "language",
+					"type": "Select",
+					"options":["Afrikaans","Amharic","Arabic","Basque","Bengali","Bulgarian","Catalan","Chinese (Hong Kong)","Chinese (Simplified)","Chinese (Traditional)"
+					   ,"Croatian","Czech","Danish","Dutch","English (UK)","English (US)","Estonian","Filipino","Finnish","French","French (Canadian)","Galician","German",
+						"Greek","Gujarati","Hebrew","Hindi","Hungarian","Icelandic","Indonesian","Italian","Japanese","Kannada","Korean","Latvian","Lithuanian","Malay",
+						"Malayalam","Marathi","Marathi","Persian","Polish","Portuguese (Brazil)","Portuguese (Portugal)","Romanian","Russian","Serbian","Slovak","Slovenian"
+					,   "Spanish","Spanish (Latin America)","Swahili","Swedish","Tamil","Telugu","Thai","Turkish","Ukrainian","Urdu","Vietnamese","Zulu"],
+					"info": "Specify the preferred language to search with.",
+					"required": false
+				},
+				{
+					"name": "maxResults",
+					"type": "Number",
+					"info": "The maximum number of people to include in the response, which is used for paging.",
+					"required": false
+				},
+				{
+					"name": "pageToken",
+					"type": "String",
+					"info": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getCommentsByActivityId",
+			"description": "List all of the comments for an activity.",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "activityId",
+					"type": "String",
+					"info": "The ID of the activity to get comments for.",
+					"required": true
+				},
+				{
+					"name": "sortOrder",
+					"type": "Select",
+					"options":["ascending","descending"],
+					"info": "The order in which to sort the list of comments.`ascending`: Sort oldest comments first(default),`descending`: Sort newest comments first. ",
+					"required": false
+				},
+				{
+					"name": "maxResults",
+					"type": "Number",
+					"info": "The maximum number of people to include in the response, which is used for paging.",
+					"required": false
+				},
+				{
+					"name": "pageToken",
+					"type": "String",
+					"info": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getComment",
+			"description": "Get a comment.If successful, this method returns a comment resource in the response body.",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "commentId",
+					"type": "String",
+					"info": "The ID of the person to get the profile for. The special value `me` can be used to indicate the authenticated user.",
+					"required": true
+				},
+				{
+					"name": "fields",
+					"type": "List",
+					"info": "List specifying which fields to include in a partial response.",
+					"required": false,
+					"structure": {
+						"name": "singleField",
+						"type": "String",
+						"info": "Single field."
+					}
+				},
+				{
+					"name": "prettyPrint",
+					"type": "Select",
+					"options": ["true","false"],
+					"info": "If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.",
+					"required": false
+				},
+				{
+					"name": "userIp",
+					"type": "String",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getActivity",
+			"description": "Get an activity.If successful, this method returns a activity resource in the response body.",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "activityId",
+					"type": "String",
+					"info": "The ID of the activity to get.",
+					"required": true
+				},
+				{
+					"name": "fields",
+					"type": "List",
+					"info": "List specifying which fields to include in a partial response.",
+					"required": false,
+					"structure": {
+						"name": "singleField",
+						"type": "String",
+						"info": "Single field."
+					}
+				},
+				{
+					"name": "prettyPrint",
+					"type": "Select",
+					"options": ["true","false"],
+					"info": "If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.",
+					"required": false
+				},
+				{
+					"name": "userIp",
+					"type": "String",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"required": false
+				}
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getActivitiesByUserId",
+			"description": "List all of the activities in the specified collection for a particular user.The collection parameter specifies which activities to list, such as public activities.",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "userId",
+					"type": "String",
+					"info": "The ID of the user to get activities for. The special value `me` can be used to indicate the authenticated user.",
+					"required": true
+				},
+				{
+					"name": "collection",
+					"type": "Select",
+					"options":["public"],
+					"info": "The collection of activities to list.`public`: All public activities created by the specified user.",
+					"required": false
+				},
+				{
+					"name": "maxResults",
+					"type": "Number",
+					"info": "The maximum number of people to include in the response, which is used for paging.",
+					"required": false
+				},
+				{
+					"name": "pageToken",
+					"type": "String",
+					"info": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		},
+		{
+			"name": "getActivitiesBySearchQuery",
+			"description": "Search public activities.For large result sets, results are paginated. ",
+			"args": [
+				{
+					"name": "accessToken",
+					"type": "String",
+					"info": "The access token Google received from your getAccessToken endpoint.",
+					"required": true
+				},
+				{
+					"name": "searchQuery",
+					"type": "String",
+					"info": "Full-text search query string.",
+					"required": true
+				},
+				{
+					"name": "orderBy",
+					"type": "Select",
+					"options":["best","recent"],
+					"info": "Specifies how to order search results.`Best`: Sort activities by relevance to the user, most relevant first.`Recent`: Sort activities by published date, most recent first.(default)",
+					"required": false
+				},
+				{
+					"name": "maxResults",
+					"type": "Number",
+					"info": "The maximum number of people to include in the response, which is used for paging.",
+					"required": false
+				},
+				{
+					"name": "pageToken",
+					"type": "String",
+					"info": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.",
+					"required": false
+				},
+				{
+					"name": "language",
+					"type": "Select",
+					"options":["Afrikaans","Amharic","Arabic","Basque","Bengali","Bulgarian","Catalan","Chinese (Hong Kong)","Chinese (Simplified)","Chinese (Traditional)"
+					,"Croatian","Czech","Danish","Dutch","English (UK)","English (US)","Estonian","Filipino","Finnish","French","French (Canadian)","Galician","German",
+						"Greek","Gujarati","Hebrew","Hindi","Hungarian","Icelandic","Indonesian","Italian","Japanese","Kannada","Korean","Latvian","Lithuanian","Malay",
+						"Malayalam","Marathi","Marathi","Persian","Polish","Portuguese (Brazil)","Portuguese (Portugal)","Romanian","Russian","Serbian","Slovak","Slovenian"
+					,   "Spanish","Spanish (Latin America)","Swahili","Swedish","Tamil","Telugu","Thai","Turkish","Ukrainian","Urdu","Vietnamese","Zulu"],
+					"info": "Specify the preferred language to search with.",
+					"required": false
+				}
+
+
+
+			],
+			"callbacks": [{
+				"name": "error",
+				"info": "Error"
+			},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		}
+
+
+
+		]
+}
