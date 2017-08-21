@@ -126,13 +126,13 @@
 				{
 					"name": "userIp",
 					"type": "String",
-					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.See more in readme.",
 					"required": false
 				},
 				{
 					"name": "quotaUser",
 					"type": "String",
-					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.See more in readme.",
 					"required": false
 				}
 
@@ -337,13 +337,13 @@
 				{
 					"name": "userIp",
 					"type": "String",
-					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.See more in readme.",
 					"required": false
 				},
 				{
 					"name": "quotaUser",
 					"type": "String",
-					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.See more in readme.",
 					"required": false
 				}
 
@@ -397,13 +397,13 @@
 				{
 					"name": "userIp",
 					"type": "String",
-					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"info": "Identifies the IP address of the end user for whom the API call is being made.See more in readme.",
 					"required": false
 				},
 				{
 					"name": "quotaUser",
 					"type": "String",
-					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.See more in readme.",
 					"required": false
 				}
 
