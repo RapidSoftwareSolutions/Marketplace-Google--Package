@@ -439,7 +439,7 @@
 					"type": "Select",
 					"options":["public"],
 					"info": "The collection of activities to list.`public`: All public activities created by the specified user.",
-					"required": false
+					"required": true
 				},
 				{
 					"name": "maxResults",

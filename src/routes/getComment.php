@@ -13,7 +13,7 @@ $app->post('/api/GooglePlus/getComment', function ($request, $response) {
     );
 
     //alias => Sign for transfer
-    $arrayType = array();
+    $arrayType = array("fields" => ",");
 
 
     $settings = $this->settings;
