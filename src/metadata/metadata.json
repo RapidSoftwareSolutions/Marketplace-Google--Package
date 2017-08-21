@@ -170,7 +170,7 @@
 					"type": "Select",
 					"options": ["plusoners","resharers"],
 					"info": "The collection of people to list.`Plusoners`: List all people who have +1'd this activity.`Resharers`: List all people who have reshared this activity.",
-					"required": false
+					"required": true
 				},
 				{
 					"name": "maxResults",
