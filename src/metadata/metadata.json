@@ -128,6 +128,12 @@
 					"type": "String",
 					"info": "Identifies the IP address of the end user for whom the API call is being made.",
 					"required": false
+				},
+				{
+					"name": "quotaUser",
+					"type": "String",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
+					"required": false
 				}
 
 
@@ -333,6 +339,12 @@
 					"type": "String",
 					"info": "Identifies the IP address of the end user for whom the API call is being made.",
 					"required": false
+				},
+				{
+					"name": "quotaUser",
+					"type": "String",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
+					"required": false
 				}
 
 
@@ -386,6 +398,12 @@
 					"name": "userIp",
 					"type": "String",
 					"info": "Identifies the IP address of the end user for whom the API call is being made.",
+					"required": false
+				},
+				{
+					"name": "quotaUser",
+					"type": "String",
+					"info": "These parameters are used for capping requests per user per second; you can't use them for whitelisting.",
 					"required": false
 				}
 

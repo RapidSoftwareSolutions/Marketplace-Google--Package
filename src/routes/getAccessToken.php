@@ -46,7 +46,8 @@ $app->post('/api/GooglePlus/getAccessToken', function ($request, $response) {
     $client = $this->httpClient;
 
     $queryParam['grant_type'] = 'authorization_code';
-
+    $queryParam['prompt'] = 'consent';
+    $queryParam['scope'] = '';
 
     try {
 

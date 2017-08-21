@@ -11,6 +11,7 @@ $routes = [
     'getActivity',
     'getActivitiesBySearchQuery',
     'refreshToken'
+  //  'test'
 
 ];
 foreach($routes as $file) {

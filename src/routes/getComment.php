@@ -5,7 +5,11 @@ $app->post('/api/GooglePlus/getComment', function ($request, $response) {
 
     $option = array(
         "accessToken" => "access_token",
-        "commentId" => "commentId"
+        "commentId" => "commentId",
+        "fields" => "fields",
+        "prettyPrint" => "prettyPrint",
+        "userIp" => "userIp",
+        "quotaUser" => "quotaUser"
     );
 
     //alias => Sign for transfer

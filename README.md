@@ -41,6 +41,8 @@ Get a person's profile.If successful, this method returns a person resource in t
 | fields     | List  | List specifying which fields to include in a partial response.
 | prettyPrint| Select| If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.
 | userIp     | String| Identifies the IP address of the end user for whom the API call is being made.
+| quotaUser    | String| These parameters are used for capping requests per user per second; you can't use them for whitelisting.
+
 
 ## GooglePlus.getUsersByActivityId
 List all of the people in the specified collection for a particular activity.The collection parameter specifies which people to list, such as people who have +1`d or reshared this activity. For large collections, results are paginated. 
@@ -85,6 +87,8 @@ Get a comment.If successful, this method returns a comment resource in the respo
 | fields     | List  | List specifying which fields to include in a partial response.The format of the fields request parameter value is loosely based on XPath syntax. The supported syntax is summarized below; additional examples are provided in the following section.See [more](https://developers.google.com/+/web/api/rest/#partial-response).
 | prettyPrint| Select| If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.
 | userIp     | String| Identifies the IP address of the end user for whom the API call is being made.
+| quotaUser    | String| These parameters are used for capping requests per user per second; you can't use them for whitelisting.
+
 
 ## GooglePlus.getActivity
 Get an activity.If successful, this method returns a activity resource in the response body.
@@ -96,6 +100,8 @@ Get an activity.If successful, this method returns a activity resource in the re
 | fields     | List  | List specifying which fields to include in a partial response.The format of the fields request parameter value is loosely based on XPath syntax. The supported syntax is summarized below; additional examples are provided in the following section.See [more](https://developers.google.com/+/web/api/rest/#partial-response).
 | prettyPrint| Select| If set to `true`, data output will include line breaks and indentation to make it more readable. If set to `false`, unnecessary whitespace is removed, reducing the size of the response. Defaults to `true`.
 | userIp     | String| Identifies the IP address of the end user for whom the API call is being made.
+| quotaUser    | String| These parameters are used for capping requests per user per second; you can't use them for whitelisting.
+
 
 ## GooglePlus.getActivitiesByUserId
 List all of the activities in the specified collection for a particular user.The collection parameter specifies which activities to list, such as public activities.
